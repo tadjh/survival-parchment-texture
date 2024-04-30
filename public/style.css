@@ -1,0 +1,20 @@
+html,
+body {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.25s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

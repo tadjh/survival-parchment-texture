@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Survival Parchment Text</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </body>
+  <script>
+    const scriptNode = document.createElement("script");
+    scriptNode.type = "text/javascript";
+
+    if (new URLSearchParams(window.location.search).has("mode", "canvas")) {
+      scriptNode.src = "js/canvas.js";
+    } else {
+      scriptNode.src = "js/default.js";
+    }
+
+    if (document.body) {
+      document.body.appendChild(scriptNode);
+    }
+  </script>
+</html>
