@@ -9,6 +9,7 @@ const height = Number(urlParams.get("height") || 512);
 const offsetY = Number(urlParams.get("offset_y") || 256);
 const offsetX = Number(urlParams.get("offset_x") || 256);
 const anchor = urlParams.get("anchor") || "mm";
+const noBg = Boolean(urlParams.get("no_bg") || false);
 
 const canvas = document.createElement("canvas");
 canvas.style.width = width + "px";
@@ -31,12 +32,13 @@ function draw() {
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
 
-    const img = new Image();
-    img.addEventListener("load", () => {
-      ctx.drawImage(img, 0, 0, retinaWidth, retinaHeight);
-    });
-    img.src = "./img/parchment_sign_1_bg.png";
-
+    if (!noBg) {
+      const img = new Image();
+      img.addEventListener("load", () => {
+        ctx.drawImage(img, 0, 0, retinaWidth, retinaHeight);
+      });
+      img.src = "./img/parchment_sign_1_bg.png";
+    }
     const textDisplay = decodeURIComponent(text);
 
     function drawText(retinaFontSize, recursions = 0) {
