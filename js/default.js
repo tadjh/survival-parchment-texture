@@ -3,11 +3,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const font = urlParams.get("font") || "Permanent Marker";
 const text = urlParams.get("text") || "Hello World";
 const fontColor = urlParams.get("font_color") || "252937";
-const fontSize = Number(urlParams.get("font_size") || "60");
+const fontSize = Number(urlParams.get("font_size") || 60);
 const width = urlParams.get("width") || "512";
 const height = urlParams.get("height") || "512";
-const offsetX = urlParams.get("offsetX") || "256";
-const offsetY = urlParams.get("offsetY") || "256";
+const offsetX = urlParams.get("offset_x") || "256";
+const offsetY = urlParams.get("offset_y") || "256";
 const anchor = urlParams.get("anchor") || "mm";
 
 window.addEventListener("load", draw);
