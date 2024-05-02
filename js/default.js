@@ -42,7 +42,7 @@ function draw() {
     const { width: textWidth, height: textHeight } =
       node.getBoundingClientRect();
 
-    const ratio = (width * 0.9) / textWidth;
+    const ratio = (width * 0.78) / textWidth;
 
     if (ratio < 1) {
       node.style.fontSize = fontSize * ratio + "px";

@@ -89,7 +89,7 @@ function draw() {
 
       const { width: textWidth } = ctx.measureText(textDisplay);
 
-      const ratio = (retinaWidth * 0.9) / textWidth;
+      const ratio = (retinaWidth * 0.78) / textWidth;
 
       if (ratio < 1) {
         console.log(ratio);
